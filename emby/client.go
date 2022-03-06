@@ -2,6 +2,7 @@ package emby
 
 import (
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -16,13 +17,16 @@ type Client struct {
 	ctx        context.Context
 }
 
-func New(ctx context.Context, baseURL, apiKey string) *Client {
+func New(ctx context.Context, baseURL, apiKey string, verifyTLS bool) *Client {
 	return &Client{
 		URL:    baseURL,
 		apiKey: apiKey,
 		ctx:    ctx,
 		HTTPClient: &http.Client{
-			Timeout: time.Minute,
+			Timeout: time.Second * 10,
+			Transport: &http.Transport{
+				TLSClientConfig: &tls.Config{InsecureSkipVerify: !verifyTLS},
+			},
 		},
 	}
 }
