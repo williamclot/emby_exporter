@@ -33,7 +33,7 @@ func main() {
 		c := http.Client{
 			Timeout: time.Second,
 		}
-		req, err := http.NewRequest("GET", fmt.Sprintf("127.0.0.1%s/health", *telemetryAddr), nil)
+		req, err := http.NewRequest("GET", fmt.Sprintf("http://127.0.0.1%s/health", *telemetryAddr), nil)
 		if err != nil {
 			os.Exit(1)
 		}
