@@ -20,6 +20,8 @@ List of available metrics:
 
 ## Usage
 
+### Options
+
 ```
 NAME:
   emby_exporter - A Prometheus exporter that exports metrics on Emby Media Server.
@@ -35,4 +37,19 @@ OPTIONS:
   --emby.token            Emby API token
   --health                Run a healthcheck of the exporter
   --help, -h              Show help
+```
+
+### Docker-compose
+
+```yaml
+services:
+  emby-exporter:
+    image: williamclot/emby_exporter
+    container_name: emby-exporter
+    restart: unless-stopped
+    command:
+      - "--emby.addr=<http|https>://<emby_ip>:<emby_port>/emby"
+      - "--emby.token=<emby_token>"
+    healthcheck:
+      test: ["CMD", "/bin/emby_exporter", "-health"]
 ```
