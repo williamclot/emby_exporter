@@ -2,6 +2,8 @@
 
 A Prometheus exporter for Emby metrics written in Go.
 
+![grafana](.github/grafana.png "grafana")
+
 List of available metrics:
 
 - emby_audio_bitrate
