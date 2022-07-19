@@ -35,11 +35,11 @@ func main() {
 		}
 		req, err := http.NewRequest("GET", fmt.Sprintf("http://127.0.0.1%s/health", *telemetryAddr), nil)
 		if err != nil {
-			os.Exit(1)
+			panic(err)
 		}
 		res, err := c.Do(req)
 		if err != nil || res.StatusCode != http.StatusOK {
-			os.Exit(1)
+			panic(fmt.Errorf("err %v, or unexpected status code %d", err, res.StatusCode))
 		}
 		os.Exit(0)
 	}
