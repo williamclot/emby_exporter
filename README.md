@@ -1,5 +1,22 @@
 # Emby exporter
 
+A Prometheus exporter for Emby metrics written in Go.
+
+List of available metrics:
+
+- emby_audio_bitrate
+- emby_audio_channels
+- emby_device_count
+- emby_episode_count
+- emby_failed_login
+- emby_movie_count
+- emby_serie_count
+- emby_stream_count
+- emby_transcoding_count
+- emby_user_count
+- emby_video_bitrate
+
+## Usage
 
 ```
 NAME:
@@ -17,4 +34,3 @@ OPTIONS:
   --health                Run a healthcheck of the exporter
   --help, -h              Show help
 ```
-
