@@ -12,7 +12,7 @@ List of available metrics:
 - emby_episode_count
 - emby_failed_login
 - emby_movie_count
-- emby_serie_count
+- emby_series_count
 - emby_stream_count
 - emby_transcoding_count
 - emby_user_count
