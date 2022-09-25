@@ -64,7 +64,7 @@ func TestEmbyCollector(t *testing.T) {
 			matches: []*regexp.Regexp{
 				regexp.MustCompile(`emby_device_count{server="mars"} 9`),
 				regexp.MustCompile(`emby_movie_count{server="mars"} 123`),
-				regexp.MustCompile(`emby_serie_count{server="mars"} 12`),
+				regexp.MustCompile(`emby_series_count{server="mars"} 12`),
 				regexp.MustCompile(`emby_episode_count{server="mars"} 362`),
 				regexp.MustCompile(`emby_user_count{server="mars"} 2`),
 				regexp.MustCompile(`emby_stream_count{server="mars"} 2`),
