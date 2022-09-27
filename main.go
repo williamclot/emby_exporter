@@ -48,7 +48,7 @@ func main() {
 		log.Fatal("address of Emby server must be specified with '-emby.addr' flag")
 	}
 	if *embyToken == "" {
-		log.Fatal("API key of Emby server must be specified with '-emby.key' flag")
+		log.Fatal("API key of Emby server must be specified with '-emby.token' flag")
 	}
 
 	ctx := context.Background()

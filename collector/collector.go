@@ -59,7 +59,7 @@ func New(ss StatusSource) prometheus.Collector {
 		),
 
 		SeriesCount: prometheus.NewDesc(
-			prometheus.BuildFQName(namespace, "serie", "count"),
+			prometheus.BuildFQName(namespace, "series", "count"),
 			"Number of tv shows available in Emby.",
 			labels,
 			nil,
